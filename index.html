@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Bestie</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <!-- Optionally add a logo or a title in the header if required -->
+    </header>
+
+    <div class="container">
+        <h1>Happy Birthday to the Bestest Friend and my love❤️!</h1>
+        <p>You are one of the bestest gifts god has given me in past few years, tere bina zindagi zindagi nhi mere yara and tere liye jaan bhi hazir h🥺💕</p>
+        <button id="surprise-btn">Click for a surprise!</button>
+    </div>
+
+    <!-- GIF overlay -->
+    <div id="gif-overlay" class="gif-overlay">
+        <img src="img/us.gif" alt="Surprise GIF">
+    </div>
+
+    <!-- Falling Glitters and Pom-Poms -->
+    <script src="script.js"></script>
+
+    <script>
+        document.getElementById('surprise-btn').addEventListener('click', function () {
+            // Show the GIF overlay
+            const gifOverlay = document.getElementById('gif-overlay');
+            gifOverlay.style.display = 'flex';
+
+            // Hide the GIF after 3 seconds
+            setTimeout(function () {
+                gifOverlay.style.display = 'none';
+
+                // Redirect to the About page after the GIF disappears
+                window.location.href = 'about.html';
+            }, 3000); // 3000 milliseconds = 3 seconds
+        });
+
+        // Add the falling glitter and pom-poms animation
+        const numberOfElements = 50; // Number of glitter and pom-pom elements
+
+        for (let i = 0; i < numberOfElements; i++) {
+            // Create glitter element
+            let glitter = document.createElement('div');
+            glitter.classList.add('glitter');
+            glitter.style.left = Math.random() * 100 + 'vw'; // Random horizontal position
+            glitter.style.top = Math.random() * 50 + 'px'; // Start from the top of the header
+            glitter.style.animationDuration = Math.random() * 2 + 3 + 's'; // Random fall duration
+            document.body.appendChild(glitter);
+
+            // Create pom-pom element
+            let pompom = document.createElement('div');
+            pompom.classList.add('pompom');
+            pompom.style.left = Math.random() * 100 + 'vw'; // Random horizontal position
+            pompom.style.top = Math.random() * 50 + 'px'; // Start from the top of the header
+            pompom.style.animationDuration = Math.random() * 2 + 3 + 's'; // Random fall duration
+            document.body.appendChild(pompom);
+        }
+    </script>
+</body>
+</html>

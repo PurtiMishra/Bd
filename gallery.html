@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiii bbyyy!</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Style for the stars */
+        .star {
+            position: absolute;
+            top: 0;
+            width: 10px;
+            height: 10px;
+            background: yellow;
+            border-radius: 50%;
+            box-shadow: 0 0 5px yellow;
+            animation: fall 5s linear infinite;
+        }
+
+        /* Falling animation */
+        @keyframes fall {
+            to {
+                transform: translateY(100vh); /* 100% of the viewport height */
+                opacity: 0;
+            }
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden; /* Prevent horizontal scroll due to star overflow */
+        }
+
+        header {
+            height: 100px;
+            background-color:rgb(104, 22, 104);
+        }
+
+        .gallery-container {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Hii Bestie! LY :>>>></h1>
+    </header>
+
+    <div class="gallery-container">
+        <h1>Plan our perfect date😉</h1>
+        <form id="thoughtsForm">
+            <label for="nickname">Your Nickname:</label>
+            <input type="text" id="nickname" name="nickname" required>
+
+            <label for="places">2 Most Wanted Places to Visit Together:</label>
+            <input type="text" id="place1" name="place1" placeholder="Place 1" required>
+            <input type="text" id="place2" name="place2" placeholder="Place 2" required>
+
+            <label for="foods">2 Foods to Eat Together:</label>
+            <input type="text" id="food1" name="food1" placeholder="Food 1" required>
+            <input type="text" id="food2" name="food2" placeholder="Food 2" required>
+
+            <label for="gifts">2 Gifts You Want from Me:</label>
+            <input type="text" id="gift1" name="gift1" placeholder="Gift 1" required>
+            <input type="text" id="gift2" name="gift2" placeholder="Gift 2" required>
+
+            <label for="wish">A Wish You Have from Me:</label>
+            <textarea id="wish" name="wish" rows="4" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('thoughtsForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+            window.location.href = 'index.html'; // Redirect to index.html
+        });
+
+        // Function to generate stars
+        function createStar() {
+            const star = document.createElement('div');
+            star.classList.add('star');
+            star.style.left = Math.random() * window.innerWidth + 'px'; // Random horizontal position
+            star.style.animationDuration = Math.random() * 3 + 3 + 's'; // Random fall duration between 3-6 seconds
+            document.body.appendChild(star);
+
+            setTimeout(() => {
+                star.remove(); // Remove star after animation
+            }, 6000); // Match with longest animation duration
+        }
+
+        // Create stars every 100ms
+        setInterval(createStar, 100);
+    </script>
+</body>
+</html>

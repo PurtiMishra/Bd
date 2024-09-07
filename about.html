@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About My Best Friend</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <!-- Optionally add a title or logo here -->
+    </header>
+
+    <div class="about-container">
+        <h1>You are so so so special to me!!!🥺🥺</h1>
+        <p>You're not just a friend, you're my family!</p>
+        <pre class="pre">  When skies are gray and days are long,
+            You’re the one who makes me strong.
+            With laughter shared and secrets kept,
+            You’re the friend who’s always stepped.
+            
+            Through ups and downs, you’re by my side,
+            In every storm, you’re my guide.
+            Your kindness shines, your smile’s so bright,
+            You turn the darkness into light.
+            
+            When I’m in need, you’re always near,
+            You listen close, you truly hear.
+            No matter what, come rain or shine,
+            I’m grateful for this friend of mine.
+            
+            So here’s to you, my friend so true,
+            In every way, I cherish you.
+            With every moment, with every day,
+            You make my world a brighter place.</pre>
+        <img src="img/about.jpg" alt="Best Friends" class="about-img">
+    </div>
+
+    <script>
+        // Add falling heart emojis
+        const numberOfHearts = 30; // Number of falling heart emojis
+
+        for (let i = 0; i < numberOfHearts; i++) {
+            let heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.textContent = '❤️'; // Heart emoji
+            heart.style.left = Math.random() * 100 + 'vw'; // Random horizontal position
+            heart.style.top = Math.random() * 50 + 'px'; // Start from the top of the header
+            heart.style.animationDuration = Math.random() * 4 + 4 + 's'; // Random fall duration
+            document.body.appendChild(heart);
+        }
+
+        // Redirect to Gallery page after 10 seconds
+        setTimeout(function () {
+            window.location.href = 'gallery.html';
+        }, 10000); // 10000 milliseconds = 10 seconds
+    </script>
+</body>
+</html>

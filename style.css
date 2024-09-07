@@ -1,0 +1,230 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+body {
+    background-color: #fce4ec;
+    font-family: 'Arial', sans-serif;
+    position: relative; /* Ensure body is positioned to contain absolute elements */
+}
+
+header {
+    background-color: #ff4081;
+    padding: 10px 0;
+    text-align: center;
+    position: relative; /* Ensure that falling elements are relative to header */
+    overflow: hidden; /* Prevent overflow from the header */
+    height: 100px; /* Adjust this height to your header's height */
+}
+
+.container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+h1 {
+    font-size: 3rem;
+    color: #ff4081;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.5rem;
+    color: #7b1fa2;
+}
+
+button {
+    padding: 15px 30px;
+    background-color: #ff4081;
+    color: white;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    animation: bounce 2s infinite;
+    margin-top: 200px; /* Adjust this value to place the button lower */
+}
+
+button:hover {
+    background-color: #f50057;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Full-screen GIF overlay */
+.gif-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Dark background overlay */
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.gif-overlay img {
+    width: 50%;
+    height: auto;
+    max-width: 100%;
+}
+
+/* Falling Glitters and Pom-Poms */
+@keyframes fall {
+    0% {
+        transform: translateY(-100%); /* Start above the header */
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(calc(100vh - 100px)); /* End below the viewport minus header height */
+        opacity: 0;
+    }
+}
+
+/* Glitter Styles */
+.glitter {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #ffd700; /* Gold Glitter */
+    border-radius: 50%;
+    animation: fall linear infinite;
+}
+
+/* Pom-Pom Styles */
+.pompom {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: #ff4081; /* Pink Pom-Pom */
+    border-radius: 50%;
+    animation: fall linear infinite;
+}
+/* Existing styles... */
+
+/* Centering for About Page */
+.about-container {
+    text-align: center;
+    padding: 50px;
+    position: relative; /* Ensure that falling elements are relative to this container */
+}
+
+.about-img {
+    width: 50%;
+    margin-top: 20px;
+}
+
+/* Falling Hearts Styles */
+@keyframes fallHearts {
+    0% {
+        transform: translateY(-100%); /* Start above the header */
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(calc(100vh - 100px)); /* End below the viewport minus header height */
+        opacity: 0;
+    }
+}
+
+.heart {
+    position: absolute;
+    font-size: 24px; /* Adjust the size of the heart emojis */
+    animation: fallHearts linear infinite;
+    color: #ff4081; /* Pink color for hearts */
+}
+
+/* Add some randomization to the falling hearts */
+.heart:nth-child(odd) {
+    animation-duration: 4s;
+}
+
+.heart:nth-child(even) {
+    animation-duration: 6s;
+}
+.pre
+{
+    font-weight: bold;
+}
+/* Existing styles... */
+
+/* Gallery Container Styles */
+.gallery-container {
+    text-align: center;
+    padding: 50px;
+}
+
+form {
+    display: grid;
+    gap: 15px;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+label {
+    font-size: 1.2rem;
+    display: block;
+}
+
+input[type="text"], textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #ff4081;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #f50057;
+}
+.star {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: yellow;
+    border-radius: 50%;
+    box-shadow: 0 0 5px yellow;
+    animation: fall 5s linear infinite;
+}
+
+/* Falling animation */
+@keyframes fall {
+    to {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
+
+header {
+    position: relative;
+    height: 150px;
+    background-color: #282828;
+    overflow: hidden; /* To make sure stars only fall within header */
+}
